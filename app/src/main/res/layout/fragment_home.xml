@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.02" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+
+            <FrameLayout
+                android:id="@+id/match_drink_img_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:layout_constraintBottom_toTopOf="@id/drink_name"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/right_guide"
+                app:layout_constraintStart_toStartOf="@+id/left_guide"
+                app:layout_constraintTop_toTopOf="@+id/top_guide">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/drink_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hidden_url"
+                    style="@style/Normal_Font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="50dp"
+                    android:visibility="invisible"
+                    tools:text="hidden_url" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hidden_id"
+                    style="@style/Normal_Font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="70dp"
+                    android:visibility="invisible"
+                    tools:text="hidden_url" />
+
+            </FrameLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/drink_name"
+                style="@style/Big_Font"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/drink_info_container"
+                app:layout_constraintEnd_toStartOf="@id/right_guide"
+                app:layout_constraintStart_toEndOf="@id/left_guide"
+                app:layout_constraintTop_toBottomOf="@id/match_drink_img_container"
+                tools:text="Drink_Name" />
+
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/drink_info_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@id/header_ingredient"
+                app:layout_constraintEnd_toStartOf="@id/right_guide"
+                app:layout_constraintStart_toEndOf="@id/left_guide"
+                app:layout_constraintTop_toBottomOf="@id/drink_name">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/header_category"
+                        style="@style/Middle_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="left"
+                        android:text="@string/head_category"
+                        tools:text="header_category" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/category"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="left"
+                        tools:text="categery" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/header_alcoholic"
+                        style="@style/Middle_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="left"
+                        android:text="@string/head_alcoholic"
+                        app:layout_constraintEnd_toStartOf="@id/right_guide"
+                        app:layout_constraintStart_toEndOf="@id/left_guide"
+                        tools:text="header_alcoholic" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/alcoholic"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="left"
+                        app:layout_constraintEnd_toStartOf="@id/right_guide"
+                        app:layout_constraintStart_toEndOf="@id/left_guide"
+                        tools:text="alcoholic" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/header_glass"
+                        style="@style/Middle_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="left"
+                        android:text="@string/head_glass"
+                        app:layout_constraintEnd_toStartOf="@id/right_guide"
+                        app:layout_constraintStart_toEndOf="@id/left_guide"
+                        tools:text="header_glass" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/glass"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="left"
+                        tools:text="glass" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/header_ingredient"
+                style="@style/Middle_Font"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="left"
+                android:text="@string/head_ingredient"
+                app:layout_constraintBottom_toTopOf="@id/drink_ingredient_container"
+                app:layout_constraintEnd_toStartOf="@id/right_guide"
+                app:layout_constraintStart_toEndOf="@id/left_guide"
+                app:layout_constraintTop_toBottomOf="@id/drink_info_container"
+                tools:text="header_ingredient" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/drink_ingredient_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toStartOf="@id/right_guide"
+                app:layout_constraintStart_toEndOf="@id/left_guide"
+                app:layout_constraintTop_toBottomOf="@id/header_ingredient">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_1"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_1" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_2"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_3"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_3" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_4"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_4" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_5"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_5" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_6"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_6" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_7"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_7" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_8"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_8" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_9"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_9" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_10"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_10" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_11"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_11" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_12"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_12" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_13"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_13" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_14"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_14" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ingredient_15"
+                        style="@style/Normal_Font"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="ingredient_15" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/header_instructions"
+                style="@style/Middle_Font"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="left"
+                android:text="@string/head_instructions"
+                app:layout_constraintEnd_toStartOf="@id/right_guide"
+                app:layout_constraintStart_toEndOf="@id/left_guide"
+                app:layout_constraintTop_toBottomOf="@id/drink_ingredient_container"
+                tools:text="header_instructions" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/instructions"
+                style="@style/Normal_Font"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="left"
+                app:layout_constraintEnd_toStartOf="@id/right_guide"
+                app:layout_constraintStart_toEndOf="@id/left_guide"
+                app:layout_constraintTop_toBottomOf="@id/header_instructions"
+                tools:text="instructions" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/favorit_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toStartOf="@id/right_guide"
+                app:layout_constraintStart_toEndOf="@id/left_guide"
+                app:layout_constraintTop_toBottomOf="@id/instructions">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/header_favorit"
+                    style="@style/Middle_Font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/head_favorit"
+                    tools:text="header_favorit" />
+
+            <FrameLayout
+                android:id="@+id/like"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+
+                <ImageView android:id="@+id/favButton"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/ic_favorite_24dp"
+                    android:clickable="true"/>
+
+
+            </FrameLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
